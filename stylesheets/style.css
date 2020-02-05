@@ -1,0 +1,250 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: #ddd;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+nav ul{
+  list-style-type: none;
+}
+
+nav li{
+  display:inline;
+  padding-right:20px;
+
+}
+
+nav a{
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none; 
+}
+
+nav a:hover{
+  text-decoration: underline;
+}
+
+.skip a{
+  background: #ffffff;
+  left: 0;
+  padding: 6px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+  margin-top: -40px;
+  position: absolute; 
+  overflow: hidden;
+
+  /*Your code here - position relative to the parent */
+  /*Your code here - place 40px higher */;
+}
+
+.skip a:focus, .skip a:active{
+  position: relative; 
+  overflow: visible;
+  top: 0; 
+  text-align: center;
+  border: 2px solid #000000;
+}
+
+.skip a:offscreen{
+  position: absolute;
+  left: -1000px;
+  top: -1000px;
+  width: 1px;
+  height: 1px;
+  text-align: left;
+  overflow: hidden
+}
+
+/* https://accessibility.psu.edu/skipnav/skiplinks/ used this link for help with skip content 
+
+/*Your code here*/
+/*Add the selector and rule to move the skip 
+link to the exact top of the page.*/
+
+/*Your code here*/
+/*Add the selector and code to put a 2px black 
+border around all elements in focus.*/
+  
+
+footer{
+  background-color:#000000;
+  color: #ffffff;
+  grid-column: 1 / -1;  /*Can you explain what this does?*/
+  grid-row: 7 / auto;   /*Can you rewrite it?*/
+  padding-top: 30px;
+  text-align: center;
+}
+
+nav{
+  background-color: #ddd;
+  padding: 20px 0; 
+  text-align: left;
+  grid-column: 1 / -1;
+  grid-row: 1/1; 
+ 
+
+  /*Your code here*/
+  /*Span the top row*/
+
+}
+
+header{
+  background-attachment: fixed; /* Parallax effect */     
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: #ffffff;
+  height: 400px;                /* Parallax effect */
+  
+  /* Your code here */
+  /* Set background-image to header.jpg in the images folder */
+  /* Span one row */
+  grid-column: 1/-1;
+  grid-row: 2;
+  background-image: url('../images/header.jpg');
+  
+  background-repeat: no-repeat;
+}
+
+header p{
+  color: #ffffff;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
+}
+
+
+.container{
+  display: grid;
+  grid-template-columns: 100px 400px 100px;
+  grid-template-rows: 30px auto auto auto auto auto 100px;
+  grid-row-gap: 15px;
+  /*Your code here  */
+  /* See documentation for mobile view */
+
+}
+
+.container div{
+  overflow: hidden;
+}
+
+.about{ 
+  grid-column: 2;
+  grid-row: 3; 
+}
+
+.about-image{
+  grid-column: 1/-1;
+  max-height: 700px;
+  grid-row: 3;
+}  
+
+.method{
+  grid-column: 2;
+  grid-row: 4; 
+}
+
+.method-image{
+  grid-column: 1/-1;
+  max-height: 700px;
+  grid-row: 4;
+} 
+
+.clients{
+  grid-column: 2;
+  grid-row: 5;
+}
+
+.clients-image{
+  grid-column: 1/-1;
+  max-height: 700px;
+  grid-row: 5;
+} 
+
+.contact{
+  grid-column: 2;
+  grid-row: 6;
+}
+
+.contact-image{
+  grid-column: 1/-1;
+  max-height: 700px;
+  grid-row: 6;
+   /*Your code here */
+   /* See documentation for mobile view */
+}
+
+.text-block{
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px solid #000000;
+  padding: 30px;
+  align-self: center;
+  justify-self: center;
+  /*Your code here:*/
+  /*Align the content in the center */
+
+}
+
+@media all and (min-width: 800px){
+
+  .container{ 
+    display: grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;
+
+
+  /*Your code here */
+  /* See documentation for desktop view */ 
+  }
+
+  nav{
+    background-color: #ddd;
+    text-align: right;
+    padding: 35px 0px;
+    align-self: center;
+  }
+
+  .about, .clients, .method-image, .contact-image{
+  /*Your code here */
+  /* See documentation for desktop view */ 
+  grid-column: 3/span 2;
+  }
+
+  .about-image, .clients-image, .method, .contact{
+    /*Your code here */
+    /* See documentation for desktop view */ 
+    grid-column: 2/ span 2;
+    }
+
+
+}  /*End the media query*/
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  skip.a{
+    -webkit-transition: none;
+    transition: none;
+  }
+}
