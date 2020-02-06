@@ -48,7 +48,7 @@ nav a:hover{
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 1;
-  margin-top: -40px;
+  top: -40px;
   position: absolute; 
   overflow: hidden;
 
@@ -62,16 +62,6 @@ nav a:hover{
   top: 0; 
   text-align: center;
   border: 2px solid #000000;
-}
-
-.skip a:offscreen{
-  position: absolute;
-  left: -1000px;
-  top: -1000px;
-  width: 1px;
-  height: 1px;
-  text-align: left;
-  overflow: hidden
 }
 
 /* https://accessibility.psu.edu/skipnav/skiplinks/ used this link for help with skip content 
@@ -99,13 +89,15 @@ nav{
   padding: 20px 0; 
   text-align: left;
   grid-column: 1 / -1;
-  grid-row: 1/1; 
+  grid-row: 1/1; }
  
+*:focus{
+  border: 2px solid #000000;
+  }
 
   /*Your code here*/
   /*Span the top row*/
 
-}
 
 header{
   background-attachment: fixed; /* Parallax effect */     
